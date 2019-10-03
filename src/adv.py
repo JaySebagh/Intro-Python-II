@@ -49,6 +49,7 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
 playerName = input("Player Name: ")
 
 currRoom = room['outside']
@@ -57,13 +58,20 @@ print(currRoom)
 
 currPlayer = Player(playerName, currRoom)
 
-userInput = ""
-
-
 while True:
     command = input("Cardinal Direction (n/e/s/w): ")
     currPlayer.move(command)
 
+
+
+
+
+
+
+
+
+
+# userInput = ""
 # def startQuest():
 #     global userInput
 #     global currRoom
