@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -49,3 +49,88 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+playerName = input("Player Name: ")
+
+currRoom = room['outside']
+print(currRoom)
+
+
+currPlayer = Player(playerName, currRoom)
+
+userInput = ""
+
+
+while True:
+    command = input("Cardinal Direction (n/e/s/w): ")
+    currPlayer.move(command)
+
+# def startQuest():
+#     global userInput
+#     global currRoom
+
+#     userInput = input("Cardinal Direction (n/e/s/w): ")
+
+#     if currRoom.name == "Outside Cave Entrance":
+#         if userInput == "n":
+#             # currRoom = Room(room['foyer'].name, room['foyer'].description)
+#             currPlayer = Player(playerName, room['foyer'])
+#             print(f'{currPlayer.player}\'s current position: \n{currRoom}')
+#             startQuest()
+#         elif userInput == "e" or userInput == "s" or userInput == "w":
+#             print("Movement is not allowed")
+#             startQuest()
+#     elif currRoom.name == "Foyer":
+#         if userInput == "s":
+#             # currRoom = Room(room['outside'].name, room['outside'].description)
+#             currPlayer = Player(playerName, room['outside'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "n":
+#             # currRoom = Room(room['overlook'].name, room['overlook'].description)
+#             currPlayer = Player(playerName, room['overlook'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "e":
+#             # currRoom = Room(room['narrow'].name, room['narrow'].description)
+#             currPlayer = Player(playerName, room['narrow'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "w":
+#             print("Movement is not allowed")
+#             startQuest()
+#     elif currRoom.name == "Grand Overlook":
+#         if userInput == "s":
+#             # currRoom = Room(room['foyer'].name, room['foyer'].description)
+#             currPlayer = Player(playerName, room['foyer'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "e" or userInput == "n" or userInput == "w":
+#             print("Movement is not allowed")
+#             startQuest()
+#     elif currRoom.name == "Narrow Passage":
+#         if userInput == "w":
+#             # currRoom = Room(room['foyer'].name, room['foyer'].description)
+#             currPlayer = Player(playerName, room['foyer'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "n":
+#             # currRoom = Room(room['treasure'].name, room['treasure'].description)
+#             currPlayer = Player(playerName, room['treasure'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "e" or userInput == "s":
+#             print("Movement is not allowed")
+#             startQuest()
+#     elif currRoom.name == "Treasure Chamber":
+#         if userInput == "s":
+#             # currRoom = Room(room['narrow'].name, room['narrow'].description)
+#             currPlayer = Player(playerName, room['narrow'])
+#             print(currRoom)
+#             startQuest()
+#         elif userInput == "e" or userInput == "n" or userInput == "w":
+#             print("Movement is not allowed")
+#             startQuest()
+#     elif userInput == "q":
+#         quit()
+
+# startQuest()
